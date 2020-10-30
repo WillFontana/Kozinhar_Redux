@@ -1,0 +1,66 @@
+.text-box {
+  @include size(100%, 45px);
+  position: relative;
+  .input {
+    @include size(100%, 45px);
+    @include radius;
+    padding: 0 12px;
+    outline: none;
+    border: 2px solid rgba($primary-color, 0.6);
+    font-size: 16px;
+    color: $black-70;
+    background-color: transparent;
+    font-family: $font-base;
+    z-index: 2;
+    position: relative;
+    &:focus,
+    &.-used,
+    &.-force-used,
+    &.-error,
+    &.-validate {
+      + .label {
+        top: -10px;
+        bottom: 100%;
+        left: 0px !important;
+        padding: 0;
+        z-index: 1;
+        .text {
+          font-size: 11px;
+        }
+      }
+    }
+    &:focus {
+      border-color: darken(rgba($secondary-color, 0.6), 5%);
+    }
+    &.-error {
+      border-color: $brand-danger;
+    }
+    &.-used {
+      &:not(.-error) {
+        border-color: darken(rgba($secondary-color, 0.6), 10%);
+      }
+    }
+    &.-textarea {
+      @include customScroll(1px, 0px, $primary-color, $ease-white);
+      min-height: 70px;
+      padding: 11.5px 12px;
+    }
+  }
+  .label {
+    @include size(auto, 2px);
+    @include transition;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 13px;
+    text-align: center;
+    top: calc(45px / 2);
+    z-index: 0;
+    .text {
+      @include transition;
+      font-size: 16px;
+      color: $black-70;
+      font-family: $font-base;
+    }
+  }
+}

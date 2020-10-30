@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+// settings
+@import "./settings/variables";
+
+// tools
+@import "./tools/functions";
+@import "./tools/mixins";
+
+// global
+@import "./global/resets";
+@import "./global/scaffolding";
+
+// components
+@import "./components/container-block";
+@import "./components/container-header";
+@import "./components/content-all";
+@import "./components/divider-line";
+@import "./components/grid";
+@import "./components/grid-layout";
+@import "./components/icon-sprite";
+@import "./components/image-fluid";
+@import "./components/svg-icon";
+@import "./components/typography";
+
+// helpers
+@import "./helpers/utilities";
+@import "./helpers/spacing";
+@import "./helpers/flexbox";
+@import "./helpers/trumps";
+
+//// Layout
+// animations
+@import "./layout/animations/keyframes";
+
+// body
+@import "./layout/body/main-content";
+@import "./layout/body/main-dahsboard";
+@import "./layout/body/main-screen";
+
+// buttons
+@import "./layout/buttons/main-button";
+
+// footer
+@import "./layout/footer/footer";
+
+// form
+@import "./layout/form/check-box";
+@import "./layout/form/login-section";
+@import "./layout/form/text-field";
+
+// header
+@import "./layout/header/header";
+@import "./layout/header/menu-burguer";
+@import "./layout/header/menu-mobile";
+@import "./layout/header/mobile-overlay";
+@import "./layout/header/nav";
+
+// loaders
+@import "./layout/loaders/lazy-card-loader";
+@import "./layout/loaders/main-card-error";
+@import "./layout/loaders/main-card-loader";
+
+// modais
+@import "./layout/modais/main-modal";
+
+// profiles-list
+@import "./layout/profile-list/profile-management";
+@import "./layout/profile-list/users-list";
+
+// profiles-list
+@import "./layout/profiles-info/profile-info";
+
+// warnigbox
+@import "./layout/warningbox/warning-box";

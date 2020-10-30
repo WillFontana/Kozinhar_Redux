@@ -1,0 +1,178 @@
+.main-button {
+  @include radius;
+  @include transition;
+  @include size(auto, $button-base-height);
+  min-width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: $button-base-height;
+  padding-right: $button-base-pad-x;
+  padding-left: $button-base-pad-x;
+  background-color: $button-base-bg;
+  outline: none;
+  user-select: none;
+  border: 2px solid $button-base-bg;
+  cursor: pointer;
+
+  // texto do botão
+  .text {
+    @include transition;
+    @include font($typo-button-font, $typo-button-font-size, $typo-button-font-size-resp, $typo-button-font-weight);
+    text-transform: uppercase;
+    white-space: nowrap;
+    user-select: none;
+    color: $button-base-color;
+  }
+
+  // Svg padrão
+  .svg-icon {
+    @include size(24px);
+    @include transition;
+    fill: darken($button-base-color, 20%);
+  }
+
+  // hover
+  &:hover {
+    border-color: $primary-color-lighten;
+    background-color: $primary-color-lighten;
+    .text {
+      color: $white;
+    }
+    .svg-icon {
+      fill: $white;
+    }
+  }
+
+  // ativo
+  &:active {
+    @include transition(0s);
+    border-color: $primary-color;
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  // botão danger
+  &.-primary {
+    border-color: $primary-color;
+    background-color: $primary-color;
+    .text {
+      color: $white;
+    }
+    .svg-icon {
+      fill: $white;
+    }
+    &:hover {
+      border-color: $primary-color-lighten;
+      background-color: $primary-color-lighten;
+      .text {
+        color: $white;
+      }
+      .svg-icon {
+        fill: $white;
+      }
+    }
+    &:active {
+      border-color: $primary-color-darken;
+      background-color: $primary-color-darken;
+    }
+    &.-loading {
+      overflow: hidden;
+      position: relative;
+      background-color: lighten($primary-color-lighten, 3%);
+      .text {
+        position: relative;
+        color: $white;
+      }
+      .svg-icon {
+        position: relative;
+        fill: $white;
+      }
+      &:before {
+        content: "";
+        @include size(40%, 100%);
+        position: absolute;
+        left: -20%;
+        animation: body-loaderA 1.5s linear infinite;
+        background-image: linear-gradient(95deg, transparent, $primary-color, transparent);
+      }
+    }
+  }
+
+  &.-success {
+    border-color: $brand-success;
+    background-color: $brand-success;
+    .text {
+      position: relative;
+      color: $white;
+    }
+    .svg-icon {
+      position: relative;
+      fill: $white;
+    }
+    &:hover {
+      border-color: lighten($brand-success, 10%);
+      background-color: lighten($brand-success, 10%);
+      .text {
+        color: $white;
+      }
+      .svg-icon {
+        fill: $white;
+      }
+    }
+    &:active {
+      border-color: darken($brand-success, 5%);
+      background-color: darken($brand-success, 5%);
+    }
+    &.-loading {
+      overflow: hidden;
+      position: relative;
+      background-color: lighten($brand-success, 3%);
+      .text {
+        color: $white;
+      }
+      .svg-icon {
+        fill: $white;
+      }
+      &:before {
+        content: "";
+        @include size(40%, 100%);
+        position: absolute;
+        left: -20%;
+        animation: body-loaderA 1.5s linear infinite;
+        background-image: linear-gradient(95deg, transparent, darken($brand-success, 5%), transparent);
+      }
+    }
+  }
+
+  // botão danger
+  &.-danger {
+    border-color: $brand-danger;
+    background-color: $brand-danger;
+    &:hover {
+      border-color: lighten($brand-danger, 10%);
+      background-color: lighten($brand-danger, 10%);
+      .text {
+        color: $white;
+      }
+      .svg-icon {
+        fill: $white;
+      }
+    }
+    &:active {
+      border-color: darken($brand-danger, 5%);
+      background-color: darken($brand-danger, 5%);
+    }
+  }
+
+  // Caso tenha mais de um botão
+  + .main-button {
+    margin-left: 10px;
+  }
+  @include media-max(md) {
+    @include size(50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

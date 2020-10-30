@@ -1,0 +1,47 @@
+$gridbox-columns: 12 !default;
+
+.grid-component {
+  display: grid;
+  @for $i from 1 through $gridbox-columns {
+    &.-fr-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+
+    @each $device, $size in $breakpoints {
+      @include media-min($device) {
+        &.-fr-#{$device}-#{i} {
+          grid-template-columns: repeat($i, 1fr);
+        }
+      }
+    }
+  }
+  .grid-card {
+    @for $i from 1 through $gridbox-columns {
+      &.-grid-span-#{$i} {
+        grid-column: span $i;
+        @include media-max(md) {
+          grid-column: unset;
+        }
+      }
+      @each $device, $size in $breakpoints {
+        @include media-max($device) {
+          &.-span-#{$device}-#{$i} {
+            grid-column: span $i;
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $class, $space in $spacing {
+  .-#{$class}-row-gap {
+    grid-row-gap: $space;
+  }
+  .-#{$class}-column-gap {
+    grid-column-gap: $space;
+  }
+  .-#{$class}-gap {
+    grid-gap: $space;
+  }
+}

@@ -1,0 +1,14 @@
+body {
+  @include customScroll(5px, 60px, $primary-color, transparent);
+  background-color: $ease-white;
+  &.-overlayed {
+    height: 100%;
+    overflow: hidden;
+  }
+  a,
+  button {
+    outline: none !important;
+    border: none;
+    background-color: transparent;
+  }
+}

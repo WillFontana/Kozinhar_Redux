@@ -1,0 +1,22 @@
+.main-card-error {
+  @include absolute-all;
+  @include size(100%);
+  @include centerFlex;
+  padding: 20px;
+  flex-direction: column;
+  background-color: $white;
+  .svg-icon {
+    @include size(50px);
+    fill: rgba($black-40, 1);
+    + .text {
+      margin-top: 10px;
+    }
+  }
+  .text {
+    text-align: center;
+    font-size: 15px;
+    color: rgba($black-40, 1);
+    font-family: $font-face;
+    position: relative;
+  }
+}

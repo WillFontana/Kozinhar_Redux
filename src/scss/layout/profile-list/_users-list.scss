@@ -1,0 +1,38 @@
+.users-list {
+  @include size(100%, auto);
+  min-height: 60%;
+  position: relative;
+  .profile-card {
+    @include size(100%, auto);
+    @include centerFlex-y;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba($primary-color, 0.3);
+    .user-thumbnail {
+      @include size(45px);
+      @include radius(45px);
+      overflow: hidden;
+      border: 1px solid $primary-color;
+      + .user-descript {
+        margin-left: 20px;
+      }
+    }
+    .user-descript {
+      display: block;
+      ._text-truncate {
+        max-width: 255px;
+      }
+    }
+    &.-active {
+      background-color: rgba($primary-color, 0.1);
+    }
+    &:hover {
+      &:not(.-active) {
+        background-color: rgba($black-20, 0.1);
+      }
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

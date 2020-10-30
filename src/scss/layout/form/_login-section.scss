@@ -1,0 +1,37 @@
+.login-section {
+  @include size(100vw, 100vh);
+  @include centerFlex;
+  position: relative;
+  &:before {
+    content: "";
+    @include centerX;
+    @include size(100%, 60%);
+    bottom: 0;
+    background-color: rgba($primary-color, 0.4);
+  }
+  &:after {
+    content: "";
+    @include centerX;
+    @include size(100%, 45%);
+    bottom: 0;
+    background-color: rgba($primary-color, 0.4);
+  }
+  .login-container {
+    @include size(400px, auto);
+    @include radius(10px);
+    min-height: 150px;
+    background-color: $white;
+    position: relative;
+    z-index: 3;
+    border: 2px solid rgba($primary-color, 0.4);
+  }
+  .container-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    border-bottom: 1px solid rgba($primary-color, 0.4);
+  }
+  .main-form {
+    padding: 40px 20px 20px;
+  }
+}

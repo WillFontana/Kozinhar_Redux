@@ -1,0 +1,28 @@
+.lazy-card-loader {
+  @include size(100%, 76px);
+  @include centerFlex-y;
+  padding: 15px 20px;
+  background-color: rgba($white, 0.2);
+  border-bottom: 1px solid rgba($primary-color, 0.3);
+  .thumb-loader {
+    @include size(45px);
+    @include radius(45px);
+    background-color: rgba($ease-white, 1);
+    animation: lazyLoading 2s linear infinite;
+    + .text-loader {
+      margin-left: 20px;
+      animation-delay: .6s;
+    }
+  }
+  .text-loader {
+    @include size(255px, 16px);
+    background-color: rgba($ease-white, 1);
+    animation: lazyLoading 2s linear infinite;
+  }
+}
+
+.lazy-list {
+  @include size(100%);
+  @include absolute-all;
+  background-color: $white;
+}

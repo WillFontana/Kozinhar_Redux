@@ -1,0 +1,73 @@
+.profile-management {
+  @include size(100%);
+  @include radius(20px);
+  @include customScroll(0px, 0px, $primary-color, transparent);
+  background-color: $white;
+  max-height: 100%;
+  overflow: scroll;
+  position: relative;
+  .user-headline {
+    @include size(100%, auto);
+    border-bottom: 1px solid $ease-white;
+    position: sticky;
+    top: 0;
+    background-color: $white;
+    z-index: 4;
+    .user-thumb-box {
+      @include size(100%, auto);
+      @include centerFlex-y;
+      padding: 20px;
+      border-bottom: 1px solid $ease-white;
+      .user-thumbnail {
+        @include size(65px);
+        @include radius(65px);
+        @include centerFlex;
+        overflow: hidden;
+        border-bottom: 1px solid $primary-color;
+        background-color: rgba($ease-white, 0.4);
+        + .user-descript {
+          margin-left: 20px;
+        }
+        .svg-icon {
+          @include size(30px);
+          fill: $black-40;
+        }
+      }
+      .user-descript {
+        display: block;
+        ._text-truncate {
+          max-width: 255px;
+        }
+      }
+    }
+    .user-status {
+      @include size(100%, auto);
+      @include centerFlex-y;
+      justify-content: space-between;
+      padding: 10px 20px;
+      .svg-icon {
+        @include size(20px);
+        fill: $primary-color;
+        + .text {
+          margin-left: 10px;
+        }
+      }
+      .dummy-logout {
+        @include size(40px);
+        @include centerFlex;
+        cursor: pointer;
+        .svg-icon {
+          @include size(20px);
+          @include transition;
+          fill: none;
+          stroke: $black-40;
+        }
+        &:hover {
+          .svg-icon {
+            stroke: $brand-danger;
+          }
+        }
+      }
+    }
+  }
+}

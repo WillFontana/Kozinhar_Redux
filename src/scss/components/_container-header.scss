@@ -1,0 +1,12 @@
+.container-header {
+  @include size(100%, 80px);
+  @include centerFlex-y;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background-color: $white;
+  border-bottom: 1px solid $primary-color;
+  .title {
+    font-size: 28px;
+  }
+}

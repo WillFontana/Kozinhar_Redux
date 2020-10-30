@@ -1,0 +1,35 @@
+.main-card-loader {
+  @include absolute-all;
+  @include size(100%);
+  @include centerFlex;
+  flex-direction: column;
+  background-color: $white;
+  z-index: 5;
+  .svg-icon {
+    @include size(30px);
+    fill: $black-40;
+    transform: rotate(180deg);
+    animation: loadingSVG 2s linear infinite;
+    + .loader-text {
+      margin-top: 10px;
+    }
+  }
+  .loader-text {
+    font-size: 16px;
+    color: $black-40;
+    font-family: $font-face;
+    position: relative;
+    animation: loadingOpacity 2s linear infinite;
+
+    &::before {
+      content: "";
+      @include size(auto);
+      position: absolute;
+      color: $black-40;
+      font-family: $font-face;
+      left: 100%;
+      bottom: 0;
+      animation: loadingDotDot 2s linear infinite;
+    }
+  }
+}

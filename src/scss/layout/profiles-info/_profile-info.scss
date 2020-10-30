@@ -1,0 +1,67 @@
+.profile-info {
+  @include size(100%);
+  @include radius(20px);
+  @include customScroll(0px, 0px, $primary-color, transparent);
+  max-width: 360px;
+  max-height: 100%;
+  overflow: scroll;
+  position: relative;
+  background-color: $white;
+  .user-headline {
+    @include size(100%, auto);
+    // border-bottom: 1px solid $ease-white;
+    position: sticky;
+    top: 0;
+    background-color: $white;
+    z-index: 4;
+    .user-thumb-box {
+      @include size(100%, auto);
+      @include centerFlex-y;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+      border-bottom: 1px solid $ease-white;
+      .user-thumbnail {
+        @include size(65px);
+        @include radius(65px);
+        @include centerFlex;
+        overflow: hidden;
+        border-bottom: 1px solid $primary-color;
+        background-color: rgba($ease-white, 0.4);
+        + .user-descript {
+          margin-top: 10px;
+        }
+        .svg-icon {
+          @include size(30px);
+          fill: $black-40;
+        }
+      }
+      .user-descript {
+        display: block;
+        ._text-truncate {
+          max-width: 255px;
+        }
+      }
+      .svg-icon {
+        @include size(20px);
+        fill: $primary-color;
+        + .text {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .empty-content-box{
+    @include size(100%, auto);
+    @include centerFlex-y;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px dashed $primary-color;
+    border-top: 1px dashed $primary-color;
+    .svg-icon{
+      @include size(34px);
+      fill: $primary-color;
+      margin-bottom: 10px;
+    }
+  }
+}

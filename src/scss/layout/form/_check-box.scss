@@ -1,0 +1,35 @@
+.switch-svg {
+  @include centerFlex;
+  cursor: pointer;
+  .input {
+    display: none;
+    &:checked {
+      ~ .svg-icon {
+        fill: $primary-color;
+        &.-uncheck {
+          display: none;
+        }
+        &.-check {
+          display: block;
+        }
+      }
+      ~ .text {
+        color: $primary-color;
+      }
+    }
+  }
+  .svg-icon {
+    @include size(18px);
+    @include transition;
+    fill: $black-60;
+    &.-check {
+      display: none;
+    }
+    + .text {
+      margin-left: 10px;
+    }
+  }
+  .text {
+    user-select: none;
+  }
+}
